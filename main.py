@@ -24,7 +24,7 @@ def procesar_csv(csv_file):
 
 def browseFiles():
     filename = filedialog.askopenfilename(initialdir="C:/Users/julen/Downloads", title="Select a File",
-                                          filetypes=(("CSV files", "*.csv*"), ("all files", "*.*")))
+                                            filetypes=(("CSV files", "*.csv*"), ("all files", "*.*")))
     # Calling function to process CSV and generate Excel file
     excel_file = procesar_csv(filename)
     message = f"Archivo Excel generado correctamente:\n{excel_file}"
@@ -32,7 +32,8 @@ def browseFiles():
 
 # Create the root window
 window = tk.Tk()
-window.title('Archivo CSV a Excel')
+window.iconbitmap('./img/2023-05-18_135916.ico')
+window.title('LK .csv to .xlsx adapter')
 
 # Get the screen width and height
 screen_width = window.winfo_screenwidth()
