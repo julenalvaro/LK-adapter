@@ -1,6 +1,6 @@
 import pandas as pd
 import tkinter as tk
-from tkinter import filedialog
+from tkinter import filedialog, messagebox
 from os.path import dirname
 import os
 
@@ -23,10 +23,12 @@ def procesar_csv(csv_file):
     return excel_file
 
 def browseFiles():
-    filename = filedialog.askopenfilename(initialdir = "C:/Users/julen/Downloads", title = "Select a File", filetypes = (("CSV files", "*.csv*"), ("all files", "*.*")))
+    filename = filedialog.askopenfilename(initialdir="C:/Users/julen/Downloads", title="Select a File",
+                                          filetypes=(("CSV files", "*.csv*"), ("all files", "*.*")))
     # Calling function to process CSV and generate Excel file
     excel_file = procesar_csv(filename)
-    print("Archivo Excel guardado en: ", excel_file)
+    message = f"Archivo Excel generado correctamente:\n{excel_file}"
+    messagebox.showinfo("Éxito", message)
 
 # Create the root window
 window = tk.Tk()
